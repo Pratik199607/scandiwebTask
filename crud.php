@@ -61,7 +61,7 @@ class Crud extends Db_Config
 $crud=new Crud();
 
 // Storing index.html form data in variables
-if(isset($_POST['Submit'])) {
+if(isset($_POST['Save'])) {
 	$sku = $crud->escape_string($_POST['sku']);	
 	$name = $crud->escape_string($_POST['name']);
 	$price = $crud->escape_string($_POST['price']);
@@ -75,7 +75,7 @@ if(isset($_POST['Submit'])) {
 	// Inserting data into database	
 	$result = $crud->execute("INSERT INTO products (sku,name,price,size,weight,dimension) VALUES('$sku','$name','$price','$size','$weight','$dimension')");
 		
-	echo "<div class='alert alert-success text-center' role='alert'>Product added successfully. <a href='index.php'>Go to Add product page</a></div>";
+	echo "<div class='alert alert-success text-center' role='alert'>Product added successfully. <a href='add-product.php'>Go to Add Product</a></div>";
 }
 //Storing data(id) for deleting data from database
 if(isset($_POST['massDelete'])) {
@@ -87,7 +87,7 @@ if(isset($_POST['massDelete'])) {
 	//Mass delete query
 	$result = $crud->execute("DELETE FROM products WHERE id IN($extract_id)");
 
-	echo "<div class='alert alert-danger text-center' role='alert'>Deleted successfull <a href='productList.php'>Go to product list</a></div>";
+	echo "<div class='alert alert-danger text-center' role='alert'>Deleted successfull <a href='index.php'>Go to product list</a></div>";
 }
 
 ?>

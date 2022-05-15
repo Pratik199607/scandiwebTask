@@ -2,9 +2,9 @@
 class Db_Config 
 {	
 	private $host = 'localhost';
-	private $username = 'root';
-	private $password = '';
-	private $database = 'scandiweb_task';
+	private $username = 'id18937635_root1';
+	private $password = 'Hello_bhai_kya_scene_hai@2022';
+	private $database = 'id18937635_scandiweb_task';
 	
 	protected $connection;
 	
